@@ -5,6 +5,7 @@ import Fade from '@material-ui/core/Fade';
 import ReactWOW from 'react-wow'
 
 
+
 class HomePage extends Component{
 
     doSomething = () => {
