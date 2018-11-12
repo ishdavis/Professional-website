@@ -1,0 +1,130 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.component {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.card-row {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.component.first-component {
+  background: url("/img/jonatan-pie-234237-unsplash.jpg") no-repeat 0 0; 
+  background-size: cover !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  overflow-wrap: break-word;
+
+}
+
+.component.second-component {
+  background: url("/img/4.jpg") no-repeat 0 0;
+  background-size: cover !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.component.third-component {
+  background-color: rgb(74, 208, 218);
+  background-size: cover !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.component.second-component h2 {
+  color: white;
+  font-size: 30px;
+}
+
+.component.second-component h1 {
+  font-size: 40px;
+}
+
+.component.second-component h3 {
+  color: white;
+  font-size: 25px
+}
+
+.Menu {
+  margin: 0;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.typer {
+  color: white;
+  margin: 0;
+  vertical-align: center;
+  padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.typer-title {
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  vertical-align: center;
+  padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/*.pagination-additional-class {
+  margin: 0;
+  position: fixed;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pagination-additional-class > li:not(:last-of-type) > a, .pagination-additional-class > li:not(:last-of-type) > span {
+  margin-right: 50px;
+}*/
+
+p {
+  color: blue;
+}
+
+
