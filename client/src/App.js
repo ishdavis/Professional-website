@@ -4,6 +4,9 @@ import './App.css';
 import { Route, BrowserRouter } from 'react-router-dom';
 import HomePage from './components/HomePage.js'
 import Home from './components/Home.js'
+import AddCard from './components/AddCard.js'
+import EditCards from './components/EditCards.js'
+import Login from './components/Login.js'
 
 class App extends Component {
   render() {
@@ -11,7 +14,9 @@ class App extends Component {
       <BrowserRouter>
         <div>
             <Route exact path="/" component={Home} />
-            <Route path="/displays" component={HomePage} />
+            <Route path="/add" component={AddCard} />
+            <Route path="/edit" component={EditCards} />
+            <Route path="/login" component={Login} />
         </div>
       </BrowserRouter>
     );

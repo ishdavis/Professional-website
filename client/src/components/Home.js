@@ -11,7 +11,7 @@ export default class Home extends React.Component {
         super(props);
         this.state = {currentPage: 1};
         this._pageScroller = null;
-        //this.pageOnChange = this.pageOnChange.bind(this);
+        this.pageOnChange = this.pageOnChange.bind(this);
     }
 
     goToPage = (eventKey) => {
@@ -42,9 +42,11 @@ export default class Home extends React.Component {
         return <React.Fragment>
             <SimpleAppBar updatePage={this.goToPage}></SimpleAppBar>
             <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
-                <HomePage/>
-                <EducationPage/>
-                <CardPreview/>
+                <HomePage key={1}/>
+                <EducationPage key={2} wow={this.state.currentPage}/>
+                <CardPreview key={3} name="Professional Experience" cardType="work"/>
+                <CardPreview key={4} name="Personal Projects" cardType="project"/>
+                <CardPreview key={5} name="Development Activities" cardType="activity"/>
             </ReactPageScroller>
         </React.Fragment>
     }

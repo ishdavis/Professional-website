@@ -49,7 +49,7 @@ class SimpleAppBar extends Component{
           className={classNames(this.props.classes.button, this.props.classes.cssRoot)}
           onClick={() => this.props.updatePage(2)}
           >
-          <strong>Work Experience</strong>
+          <strong>Professional Experience</strong>
         </Button>
         <Button
           variant="contained"
@@ -57,7 +57,7 @@ class SimpleAppBar extends Component{
           className={classNames(this.props.classes.button, this.props.classes.cssRoot)}
           onClick={() => this.props.updatePage(3)}
           >
-          <strong>Projects</strong>
+          <strong>Personal Projects</strong>
         </Button>
         <Button
           variant="contained"
@@ -66,14 +66,6 @@ class SimpleAppBar extends Component{
           onClick={() => this.props.updatePage(4)}
           >
           <strong>Development Activities</strong>
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classNames(this.props.classes.button, this.props.classes.cssRoot)}
-          onClick={() => this.props.updatePage(5)}
-          >
-          <strong>Contact</strong>
         </Button>
 
         </Toolbar>

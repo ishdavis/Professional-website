@@ -9,6 +9,7 @@ html, body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: white;
 }
 
 code {
@@ -22,10 +23,53 @@ code {
   display: flex;
 }
 
+.card-spacing {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  color: white
+}
+
+.prev-arrow {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  color: white
+}
+
+.next-text {
+  position: absolute;
+  top: 52%;
+  right: 7%;
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.prev-text {
+  position: absolute;
+  top: 52%;
+  left: 7%;
+  color: white;
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-shadow {
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+  color: rgb(252, 252, 252) !important;
+}
+
 .card-row {
   display: flex;
   padding-top: 20px;
-  justify-content: space-between;
+  justify-content: center;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -56,7 +100,7 @@ code {
 }
 
 .component.third-component {
-  background-color: rgb(74, 208, 218);
+  background-color: rgb(1, 0, 41);
   background-size: cover !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -127,4 +171,40 @@ p {
   color: blue;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
