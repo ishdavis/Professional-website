@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import IndividualCard from './IndividualCard';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import Login from './Login.js'
 
 class CardPreview extends Component{
@@ -33,7 +32,7 @@ class CardPreview extends Component{
     getButtonLink = (id, cardType) => {
         var link = "add?id=" + id + "&cardtype=" + cardType;
         return (
-            <a href={link} target="_blank"><button style={{"color": "green"}}>Edit</button></a> 
+            <a href={link} target="_blank" rel="noopener noreferrer"><button style={{"color": "green"}}>Edit</button></a> 
         )
     }
 

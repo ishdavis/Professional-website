@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
-import Typing from 'react-typing-animation';
-import MyAvatar from './MyAvatar';
-import Fade from '@material-ui/core/Fade';
-import ReactWOW from 'react-wow';
 import IndividualCard from './IndividualCard';
 import axios from 'axios';
-import Slide from '@material-ui/core/Slide';
 import Zoom from '@material-ui/core/Zoom';
-import TrackVisibility from 'react-on-screen';
-import OnVisible from 'react-on-visible';
 import VisibilitySensor from 'react-visibility-sensor';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import {BrowserView, MobileView} from "react-device-detect"
 
 
 class CardPreview extends Component{
@@ -26,7 +20,7 @@ class CardPreview extends Component{
             animate: false,
             page: 0,
             moreCards: false,
-            cardsPerPage: 12
+            cardsPerPage: null
         }
     }
 
@@ -47,9 +41,25 @@ class CardPreview extends Component{
     }
 
     componentWillMount(){
-        let cardLimit = {"cardLimit": this.state.cardsPerPage + 1}; {/*Adding one here to determine if there are any cards remaining to show after this page*/}
-        let url = this.props.cardType;
-        this.getNewCards(url,cardLimit);
+        this.cardDisplayInfo()
+        // let cardLimit = {"cardLimit": this.state.cardsPerPage + 1}; {/*Adding one here to determine if there are any cards remaining to show after this page*/}
+        // let url = this.props.cardType;
+        // this.getNewCards(url,cardLimit);
+    }
+
+    cardDisplayInfo(){
+        var height = window.innerHeight;
+        var width = window.innerWidth;
+        var rows = Math.floor(height/300); //The 300 here corresponds to the individual card size
+        var cols = Math.floor(width/340); //The 340 here corresponds to the individual card size plus some padding
+        cols = cols > 4 ? 4 : cols; //Want the max number of columns to be 4, for aesthetics
+        rows = rows > 3 ? 3 : rows; //so aesthetic
+        var cardsPerPage = rows * cols;
+        this.setState({cardsPerPage, rows, cols}, function(){
+            let cardLimit = {"cardLimit": this.state.cardsPerPage + 1}; {/*Adding one here to determine if there are any cards remaining to show after this page*/}
+            let url = this.props.cardType;
+            this.getNewCards(url,cardLimit);
+        });
     }
 
     getNewCards = (url,data) => {
@@ -106,12 +116,20 @@ class CardPreview extends Component{
             <div className="component third-component">
                 <div style={style}>
                     <VisibilitySensor onChange={this.visibilityChanged}>
-                        <h1 className="typer-title"><strong>{ name }</strong></h1>
+                        <h1 className="typer-title"><strong>{name}</strong></h1>
                     </VisibilitySensor>
-                    <ArrowForwardIcon onClick={() => this.changeCardPage("next")} visibility={this.state.moreCards === true ? "visible":"hidden"} fontSize={"large"} className="next-arrow"></ArrowForwardIcon>
-                    <h3 onClick={() => this.changeCardPage("next")} className="next-text" style={{visibility: this.state.moreCards === true ? "visible":"hidden"}}><strong>Older</strong></h3>
-                    <ArrowBackIcon onClick={() => this.changeCardPage("previous")} visibility={this.state.page !== 0 ? "visible":"hidden"} fontSize={"large"} className="prev-arrow"></ArrowBackIcon>
-                    <h3 onClick={() => this.changeCardPage("previous")} className="prev-text" style={{visibility: this.state.page !== 0 ? "visible":"hidden"}}><strong>Newer</strong></h3>
+                    <MobileView>
+                        <p onClick={() => this.changeCardPage("previous")} className="navigation-text" style={{visibility: this.state.page !== 0 ? "visible":"hidden"}}>Newer</p>
+                        <ArrowBackIcon onClick={() => this.changeCardPage("previous")} visibility={this.state.page !== 0 ? "visible":"hidden"} fontSize={"large"} className="newer-arrow-mobile"></ArrowBackIcon>
+                        <ArrowForwardIcon onClick={() => this.changeCardPage("next")} visibility={this.state.moreCards === true ? "visible":"hidden"} fontSize={"large"} className="older-arrow-mobile"></ArrowForwardIcon>
+                        <p onClick={() => this.changeCardPage("next")} className="navigation-text" style={{visibility: this.state.moreCards === true ? "visible":"hidden"}}>Older</p>
+                    </MobileView>
+                    <BrowserView>
+                        <ArrowForwardIcon onClick={() => this.changeCardPage("next")} visibility={this.state.moreCards === true ? "visible":"hidden"} fontSize={"large"} className="next-arrow"></ArrowForwardIcon>
+                        <h3 onClick={() => this.changeCardPage("next")} className="next-text" style={{visibility: this.state.moreCards === true ? "visible":"hidden"}}><strong>Older</strong></h3>
+                        <ArrowBackIcon onClick={() => this.changeCardPage("previous")} visibility={this.state.page !== 0 ? "visible":"hidden"} fontSize={"large"} className="prev-arrow"></ArrowBackIcon>
+                        <h3 onClick={() => this.changeCardPage("previous")} className="prev-text" style={{visibility: this.state.page !== 0 ? "visible":"hidden"}}><strong>Newer</strong></h3>
+                    </BrowserView>
                     <div className="card-row">
                         { this.getCardsForRow(0,this.state.cardsPerRow + this.state.rowExtras[0])} {/*The parameters signify where the cards on this row should begin, and where they should end*/}
                     </div>

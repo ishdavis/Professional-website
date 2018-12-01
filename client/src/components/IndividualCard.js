@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardPopup from './CardPopup';
@@ -14,14 +12,14 @@ const styles = theme => ({
   card: {
     maxWidth: 300,
     minWidth: 300,
-    maxHeight: 200,
-    minHeight: 200
+    maxHeight: 209,
+    minHeight: 209
   },
   cardContent: {
     maxWidth: 270,
     minWidth: 270,
-    maxHeight: 125,
-    minHeight: 125,
+    maxHeight: 134,
+    minHeight: 134,
     paddingTop: 0
   },
   title: {
@@ -50,7 +48,6 @@ class IndividualCard extends React.Component {
     const { button1Link } = this.props;
     const { button2Text } = this.props;
     const { button2Link } = this.props;
-    const { image } = this.props;
     const { longDescription } = this.props;
     const { date } = this.props;
 

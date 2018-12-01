@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Route, BrowserRouter } from 'react-router-dom';
-import HomePage from './components/HomePage.js'
 import Home from './components/Home.js'
 import AddCard from './components/AddCard.js'
 import EditCards from './components/EditCards.js'
