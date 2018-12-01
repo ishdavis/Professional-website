@@ -13,6 +13,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
+    "react-device-detect": "^1.6.1",
     "react-dom": "^16.6.0",
     "react-on-screen": "^2.1.0",
     "react-on-visible": "^1.5.1",

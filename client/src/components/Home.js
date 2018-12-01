@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Pager} from "react-bootstrap";
 import ReactPageScroller from 'react-page-scroller';
 import HomePage from "./HomePage"
 import EducationPage from "./EducationPage"
 import SimpleAppBar from "./SimpleAppBar"
 import CardPreview from "./CardPreview"
+import {BrowserView} from "react-device-detect"
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -40,7 +41,9 @@ export default class Home extends React.Component {
         //const pagesNumbers = this.getPagesNumbers();
 
         return <React.Fragment>
-            <SimpleAppBar updatePage={this.goToPage}></SimpleAppBar>
+            <BrowserView>
+                <SimpleAppBar updatePage={this.goToPage}></SimpleAppBar>
+            </BrowserView>
             <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}>
                 <HomePage key={1}/>
                 <EducationPage key={2} wow={this.state.currentPage}/>

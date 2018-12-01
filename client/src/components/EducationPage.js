@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import MyAvatar from './MyAvatar';
-import ReactWOW from 'react-wow'
 import Typing from 'react-typing-animation';
-import Fade from '@material-ui/core/Fade';
 import VisibilitySensor from 'react-visibility-sensor';
 import Zoom from '@material-ui/core/Zoom';
 

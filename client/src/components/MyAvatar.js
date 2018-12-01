@@ -13,8 +13,8 @@ const styles = {
     margin: 10,
   },
   bigAvatar: {
-    width: 300,
-    height: 300,
+    width: window.innerHeight / 3,
+    height: window.innerHeight / 3,
   },
 };
 

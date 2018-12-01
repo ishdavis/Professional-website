@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import IndividualCard from './IndividualCard';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';

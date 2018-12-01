@@ -19,10 +19,6 @@ class HomePage extends Component{
             width: '100%',
             height: '100%' 
         }
-        var imageStyle = {
-            width: '500px',
-            height: '200px'
-        }
         return(
             <div className="component first-component">
                 <div style={style}>
@@ -38,12 +34,12 @@ class HomePage extends Component{
                         </div>
                     </ReactWOW>
                     <Fade in={true} style={{ transitionDelay: 2000}} mountOnEnter>
-                        <div class="tooltip">
-                            <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline"> 
-                                <li><a href="https://www.linkedin.com/in/ishvarausdavis/" target="_blank"><i class="fa fa-linkedin"></i></a> </li> 
-                                <li><a href="https://github.com/ishdavis" target="_blank"><i class="fa fa-github"></i></a> </li>
-                                <li><a href="mailto:ishvaraus@gmail.com"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="Resume.docx" download><i class="fa fa-file"></i></a></li>
+                        <div className="tooltip">
+                            <ul className="social-icons icon-circle icon-rotate list-unstyled list-inline"> 
+                                <li><a href="https://www.linkedin.com/in/ishvarausdavis/" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin"></i></a> </li> 
+                                <li><a href="https://github.com/ishdavis" target="_blank" rel="noopener noreferrer"><i className="fa fa-github"></i></a> </li>
+                                <li><a href="mailto:ishvaraus@gmail.com"><i className="fa fa-envelope"></i></a></li>
+                                <li><a href="Resume.docx" download><i className="fa fa-file"></i></a></li>
                             </ul>
                         </div>
                     </Fade>

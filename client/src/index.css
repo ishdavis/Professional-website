@@ -35,6 +35,35 @@ code {
   color: white
 }
 
+.older-arrow-mobile {
+  color: white;
+  display: inline-block;
+  margin-bottom: 0px;
+  bottom: 0px;
+  padding-bottom: 0px;
+  margin-left: 20px;
+}
+
+.newer-arrow-mobile {
+  color: white;
+  display: inline-block;
+  margin-bottom: 0px;
+  bottom: 0px;
+  padding-bottom: 0px;
+  margin-right: 20px;
+}
+
+.navigation-text {
+  display: inline-block;
+  margin-bottom: 0px;
+  bottom: 0px;
+  padding-top: 0px;
+  margin-top: -20px;
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .prev-arrow {
   position: absolute;
   top: 50%;
