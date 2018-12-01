@@ -19,6 +19,10 @@ class HomePage extends Component{
             width: '100%',
             height: '100%' 
         }
+        var imageStyle = {
+            width: '500px',
+            height: '200px'
+        }
         return(
             <div className="component first-component">
                 <div style={style}>
